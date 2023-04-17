@@ -1,6 +1,8 @@
 import React from 'react';
-import {IC_Google} from '../../assets/icons';
+import {IMG_google1} from '../../assets/icons';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
+
+// Button Google in Sign In Screen
 
 class GoogleButton extends React.Component {
   render() {
@@ -8,7 +10,7 @@ class GoogleButton extends React.Component {
       <>
         <View style={styles.container}>
           <TouchableOpacity onPress={this.props.onPress}>
-            <IC_Google />
+            <IMG_google1 />
           </TouchableOpacity>
         </View>
       </>

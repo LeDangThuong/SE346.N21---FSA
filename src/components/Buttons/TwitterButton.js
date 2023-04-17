@@ -2,7 +2,9 @@ import React from 'react';
 import {IMG_Pngtreetwittersocialmediaroundicon_87048231} from '../../assets/icons';
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 
-class InstagramButton extends React.Component {
+// Button Twitter in Sign In Screen
+
+class TwitterButton extends React.Component {
   render() {
     return (
       <>
@@ -16,7 +18,7 @@ class InstagramButton extends React.Component {
   }
 }
 
-export default InstagramButton;
+export default TwitterButton;
 
 const styles = StyleSheet.create({
   container: {
