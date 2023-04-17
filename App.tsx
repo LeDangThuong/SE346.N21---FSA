@@ -5,6 +5,7 @@
  * @format
  */
 
+<<<<<<< HEAD
 import React from 'react';
 import {
   SafeAreaView,
@@ -26,13 +27,36 @@ export default function App (){
      <Screen onComponentRef={OverView}>
      </Screen>
     )
+=======
+import React from "react";
+import { StyleSheet, Text, TextInput, View, Image } from "react-native";
+
+import SearchInput from "./src/components/SearchInput";
+import CustomerScreen from "./src/screens/CustomerView/CustomerScreen";
+
+
+
+
+
+//const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <CustomerScreen/>
+  )
+>>>>>>> ac2def58d1304ebf9099b59af067a808fff78e2c
 }
 
 const styles = StyleSheet.create({
   container:{
     flex: 1,
+<<<<<<< HEAD
     alignItems: 'center',
     justifyContent: 'center'
+=======
+    justifyContent: 'center',
+    alignItems: 'center'
+>>>>>>> ac2def58d1304ebf9099b59af067a808fff78e2c
   }
 });
 
