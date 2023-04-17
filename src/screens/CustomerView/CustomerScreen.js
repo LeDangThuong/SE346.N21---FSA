@@ -2,15 +2,18 @@ import React from "react";
 import { StyleSheet, Text, TextInput, View, Image, FlatList, TouchableOpacity } from "react-native";
 import {NavigationContainer} from '@react-navigation/native'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import HomeScreenCustomer from './HomeScreenCustomer'
 import NotificationScreen from "./NotificationScreen";
 import FollowScreen from "./FollowScreen";
 import AccountScreen from "./AccountScreen";
 import { IC_Heart, IC_Home, IC_User, IC_Vector } from "../../assets/icons";
 import CUSTOM_COLOR from "../../constants/colors";
+import StackHome from "./StackHome";
 
 
 const TabBottom = createBottomTabNavigator()
+
 
 function CustomerScreen() {
 
@@ -37,7 +40,7 @@ function CustomerScreen() {
            
         
         >
-            <TabBottom.Screen  name = 'HomeScreen' component={HomeScreenCustomer} options = {{
+            <TabBottom.Screen  name = 'StackHome' component={StackHome} options = {{
                 tabBarLabel: 'Home',
                 tabBarIcon: ({focused}) =>{
                     return( 
@@ -148,6 +151,9 @@ function CustomerScreen() {
             />
 
         </TabBottom.Navigator>
+
+
+        
 
       </NavigationContainer>
       

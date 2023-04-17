@@ -6,7 +6,8 @@ import Categories from "../../components/Categories";
 import ProductCard from "../../components/ProductCard";
 import SearchInput from "../../components/SearchInput";
 import CUSTOM_COLOR from "../../constants/colors";
-
+import {NavigationContainer} from '@react-navigation/native'
+import {createNativeStackNavigator} from '@react-navigation/native-stack'
 
 
 
@@ -57,7 +58,7 @@ const dataCategorie= [
   },
 ]
 
-function HomeScreenCustomer() {
+function HomeScreenCustomer({navigation}) {
 
  
 
@@ -105,7 +106,9 @@ function HomeScreenCustomer() {
               data = {dataTredding}
             
               renderItem = {({item}) => 
-                <TouchableOpacity style = {{}}>
+                <TouchableOpacity style = {{}}
+                  onPress = {() =>{navigation.navigate('DetailProduct')}}
+                >
                   <ProductCard
                   source = {item.image}
                   title = {item.title}
