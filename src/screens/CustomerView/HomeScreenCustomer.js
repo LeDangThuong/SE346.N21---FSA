@@ -7,6 +7,8 @@ import SearchInput from "../../components/SearchInput";
 import CUSTOM_COLOR from "../../constants/colors";
 
 
+
+
 const datas = [
   {
     id: '1',
@@ -30,6 +32,8 @@ const datas = [
   },
 
 ];
+
+
 
 function HomeScreenCustomer() {
 
