@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, TextInput, View, Image, FlatList, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TextInput, View, Image, FlatList, TouchableOpacity, ScrollView, TouchableWithoutFeedback } from "react-native";
 import { IC_ShoppingCart } from "../../assets/icons";
-import { IM_MauAo, IM_SaleImage } from "../../assets/images";
+import { IM_GiayNam, IM_MauAo, IM_PhuKien, IM_SaleImage, IM_ThoiTrangNam, IM_ThoiTrangNu } from "../../assets/images";
+import Categories from "../../components/Categories";
 import ProductCard from "../../components/ProductCard";
 import SearchInput from "../../components/SearchInput";
 import CUSTOM_COLOR from "../../constants/colors";
@@ -9,7 +10,7 @@ import CUSTOM_COLOR from "../../constants/colors";
 
 
 
-const datas = [
+const dataTredding = [
   {
     id: '1',
     image: IM_MauAo,
@@ -33,14 +34,35 @@ const datas = [
 
 ];
 
-
+const dataCategorie= [
+  {
+    id: '1',
+    source: IM_ThoiTrangNam,
+    name: 'Thời trang nam',
+  },
+  {
+    id: '2',
+    source: IM_ThoiTrangNu,
+    name: 'Thời trang nữ',
+  },
+  {
+    id: '3',
+    source: IM_PhuKien,
+    name: 'Phụ kiện',
+  },
+  {
+    id: '4',
+    source: IM_GiayNam,
+    name: 'Giày nam',
+  },
+]
 
 function HomeScreenCustomer() {
 
  
 
     return (
-      <View style = {{flex: 1}}>
+      <ScrollView style = {{flex: 1}}>
 
           <View style = {{flexDirection: 'row'}}>
               <SearchInput
@@ -62,6 +84,9 @@ function HomeScreenCustomer() {
               
           </View>
 
+          
+
+
           <Text style = {styles.textView}>On sale</Text>
 
           <Image style= {{marginHorizontal: 30, height: 120, width: 380}}
@@ -77,10 +102,10 @@ function HomeScreenCustomer() {
             <FlatList 
               windowSize ={10}
               horizontal = {true}
-              data = {datas}
+              data = {dataTredding}
             
               renderItem = {({item}) => 
-                <TouchableOpacity style = {{height: 10}}>
+                <TouchableOpacity style = {{}}>
                   <ProductCard
                   source = {item.image}
                   title = {item.title}
@@ -100,7 +125,29 @@ function HomeScreenCustomer() {
              <TouchableOpacity><Text style={{margin:20}}>Explore now</Text></TouchableOpacity>
           </View>
 
-      </View>
+          <View style ={{}}>
+            <FlatList 
+              
+             
+              data = {dataCategorie}
+            
+              renderItem = {({item}) => 
+                <TouchableWithoutFeedback style = {{}}>
+                  <Categories
+                    source = {item.source}
+                    title = {item.name}
+                  />
+                </TouchableWithoutFeedback>
+                
+                
+              }
+              keyExtractor={item => item.id}
+            />
+
+          </View>
+          
+          <View style = {{height: 200}}></View>
+      </ScrollView>
       
     )
   }

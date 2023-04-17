@@ -20,8 +20,13 @@ function CustomerScreen() {
           
             screenOptions={
                {
+                tabBarStyle: {
+                    position: 'absolute',
+                    bottom: 0,
+                },
+                
                 tabBarShowLabel: false,
-                //tabBarActiveTintColor: '#e91e63',
+                
                 headerShown: false,
 
                 
